@@ -1,9 +1,8 @@
 const express = require('express');
 const app = express();
 
-app.use(express.json()); // JSON 파싱을 위한 미들웨어 설정
+app.use(express.json()); 
 
-// POST /api/users 엔드포인트 처리
 app.post('/api/users', (req, res) => {
   const { username, email, password, name, birthday } = req.body;
 
@@ -13,12 +12,9 @@ app.post('/api/users', (req, res) => {
   }
 
   // 사용자 등록 로직
-  // ...
-
   res.status(201).json({ message: 'User registered successfully.' });
 });
 
-// PATCH /api/users/:id 라우트
 app.patch('/api/users/:id', (req, res) => {
   const id = parseInt(req.params.id);
   const { username, email, newpassword, name, birthday } = req.body;
