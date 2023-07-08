@@ -11,7 +11,7 @@ app.post('/api/users', (req, res) => {
     return res.status(400).json({ error: 'Required information is missing.' });
   }
 
-  // 사용자 등록 로직
+  // 사용자 등록 
   res.status(201).json({ message: 'User registered successfully.' });
 });
 
