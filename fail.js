@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 
-
+// 유저 등록 실패
 app.post('/api/users', (req, res) => {
     const { username, email, password, name, birthday } = req.body;
   
@@ -59,7 +59,7 @@ app.post('/api/users', (req, res) => {
       });
     }
   
-    // 중복 체크 로직
+    // 중복 체크
     const existingUser = users.find(user => user.username === username);
     if (existingUser) {
       return res.status(404).json({
